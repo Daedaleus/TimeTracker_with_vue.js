@@ -4,14 +4,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
-gem 'bootsnap', '>= 1.4.2', require: false
-gem 'jbuilder', '~> 2.7'
-gem 'puma', '~> 3.11'
-gem 'rails', '~> 6.0.0'
-gem 'sass-rails', '~> 5'
-gem 'turbolinks', '~> 5'
+gem 'bootsnap', require: false
+gem 'jbuilder'
+gem 'puma'
+gem 'rails'
+gem 'sass-rails'
+gem 'turbolinks'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'webpacker', '~> 4.0'
+gem 'webpacker'
 
 group :production do
   gem 'mysql2'
@@ -21,16 +21,18 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry'
   gem 'pry-rails'
-  gem 'sqlite3', '~> 1.4'
+  gem 'sqlite3'
+  gem 'yard'
 end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console'
 end
 
 group :test do
-  gem 'capybara', '>= 2.15'
+  gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
   gem 'webdrivers'
 end
 

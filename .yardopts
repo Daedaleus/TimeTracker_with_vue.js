@@ -1,0 +1,14 @@
+-o docs
+
+--markup markdown
+
+--private
+--protected
+
+--tag nodocs --query '!@nodocs'
+
+--tag http:"HTTP Status"
+--tag url:"Example Endpoints"
+
+--exclude test
+--exclude vendor
