@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<h4>Work Logs</h4>
+<% @project.work_logs.each do |work_log| %>
+  <div><%= work_log.day %></div>
+  <div><%= work_log.hours %></div>
+<% end %>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

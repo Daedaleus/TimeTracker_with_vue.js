@@ -18,6 +18,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'annotate'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry'
   gem 'pry-rails'

@@ -1,0 +1,9 @@
+<%= content_tag :div,
+  id: 'work_log_form',
+  data:{
+      work_log: work_log.to_json(except: [:created_at, :updated_at]),
+
+  } do %>
+  <label>Worklog</label>
+  <input type="text" v-model="work_log.hours">
+<% end %>

@@ -1,0 +1,31 @@
+<%= content_tag :div,
+                id: 'project_form',
+                data:{
+                    id: project.id,
+                    project: project.to_json(except: [:id, :created_at, :updated_at]),
+                    work_logs_attributes: project.work_logs.to_json(except: [:project_id, :created_at, :updated_at])
+                } do %>
+  <label>Project</label>
+  <input type="text" v-model="project.name">
+
+  <h4>Work Logs</h4>
+  <div v-for="(work_log, index) in project.work_logs_attributes">
+    <div v-if="work_log._destroy == '1'">
+      {{ work_log.day }} will be removed.  <button v-on:click="undoRemove(index)">Undo Remove</button>
+    </div>
+    <div v-else>
+      <label>Work day</label>
+      <input type="date" v-model="work_log.day" />
+      <label>Hours</label>
+      <input type="number" v-model="work_log.hours" />
+      <br />
+      <button v-on:click="removeWorkLog(index)">Remove</button>
+
+      <br />
+    </div>
+  </div>
+
+  <button v-on:click="addWorkLog">Add Work log</button>
+  <br />
+  <button v-on:click="saveProject">Save Project</button>
+<% end %>
