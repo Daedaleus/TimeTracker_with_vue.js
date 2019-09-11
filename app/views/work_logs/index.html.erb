@@ -16,9 +16,9 @@
       <tr>
         <td><%= work_log.day %></td>
         <td><%= work_log.hours %></td>
-        <td><%= link_to 'Show', work_log %></td>
-        <td><%= link_to 'Edit', edit_work_log_path(work_log) %></td>
-        <td><%= link_to 'Destroy', work_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [work_log.project, work_log ]%></td>
+        <td><%= link_to 'Edit', edit_project_work_log_url(project_id: work_log.project.id, id: work_log.id) %></td>
+        <td><%= link_to 'Destroy', [work_log.project, work_log ], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Work Log', new_work_log_path %>
+<%= link_to 'New Work Log', new_project_work_log_url %>

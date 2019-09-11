@@ -1,3 +1,5 @@
+require 'em/pure_ruby'
+
 source 'https://rubygems.org'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
@@ -27,11 +29,25 @@ group :development, :test do
 end
 
 group :development do
+  gem 'guard'
+  gem 'guard-brakeman', require: false
+  gem 'guard-bundler', require: false
+  gem 'guard-bundler-audit', require: false
+  gem 'guard-cucumber', require: false
+  gem 'guard-migrate', require: false
+  gem 'guard-minitest', require: false
+  gem 'guard-yard', require:false
   gem 'web-console'
+  if Gem.win_platform?
+    gem 'wdm'
+    gem 'win32console'
+  end
 end
 
 group :test do
   gem 'capybara'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner', require: false
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'webdrivers'

@@ -2,5 +2,5 @@
 
 <%= render 'form', work_log: @work_log %>
 
-<%= link_to 'Show', @work_log %> |
-<%= link_to 'Back', work_logs_path %>
+<%= link_to 'Show', [@work_log.project, @work_log] %> |
+<%= link_to 'Back', project_work_logs_url %>
